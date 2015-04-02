@@ -1,0 +1,23 @@
+﻿@model OpenCalaisExample.Models.TransformationModel
+@{
+    ViewBag.Title = "Index";
+}
+
+@using OpenCalaisExample.CustomHelpers;
+
+@if (Model != null)
+{
+    <div>
+        @Html.TransformXml(Model.XmlFile, Model.XsltPath)
+    </div>
+}
+else
+{
+    using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <h1>Enter your data</h1>
+        @Html.TextArea("inputData", new { @cols= 80, @rows = 20 });
+        <br />
+        <input type="submit" value="Submit" />
+    }
+}
