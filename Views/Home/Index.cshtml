@@ -13,11 +13,12 @@
 }
 else
 {
-    using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    using (Html.BeginForm("Index", "Home", FormMethod.Post,  new { enctype = "multipart/form-data" }))
     {
         <h1>Enter your data</h1>
         @Html.TextArea("inputData", new { @cols= 80, @rows = 20 });
         <br />
+        <input type="file" value="Upload file" name="file"/>
         <input type="submit" value="Submit" />
     }
 }

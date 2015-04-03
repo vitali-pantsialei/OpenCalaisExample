@@ -30,3 +30,35 @@ C:\Users\Виталий\Documents\Visual Studio 2013\Projects\OpenCalaisExample\
 C:\Users\Виталий\Documents\Visual Studio 2013\Projects\OpenCalaisExample\OpenCalaisExample\obj\Debug\OpenCalaisExample.csprojResolveAssemblyReference.cache
 C:\Users\Виталий\Documents\Visual Studio 2013\Projects\OpenCalaisExample\OpenCalaisExample\obj\Debug\OpenCalaisExample.dll
 C:\Users\Виталий\Documents\Visual Studio 2013\Projects\OpenCalaisExample\OpenCalaisExample\obj\Debug\OpenCalaisExample.pdb
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\OpenCalaisExample.dll.config
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\OpenCalaisExample.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\OpenCalaisExample.pdb
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\Antlr3.Runtime.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\EntityFramework.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\Microsoft.Web.Infrastructure.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\Newtonsoft.Json.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Net.Http.Formatting.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.Http.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.Http.WebHost.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.Mvc.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.Optimization.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.Providers.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.Razor.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.WebPages.Deployment.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.WebPages.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.WebPages.Razor.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\WebGrease.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\EntityFramework.xml
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\Newtonsoft.Json.xml
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Net.Http.Formatting.xml
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.Http.xml
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.Http.WebHost.xml
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.Mvc.xml
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.Razor.xml
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.WebPages.xml
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.WebPages.Deployment.xml
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\bin\System.Web.WebPages.Razor.xml
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\obj\Debug\OpenCalaisExample.csprojResolveAssemblyReference.cache
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\obj\Debug\OpenCalaisExample.dll
+D:\Vitali_Pantsialei\OpenCalaisExample\OpenCalaisExample\obj\Debug\OpenCalaisExample.pdb
