@@ -46,6 +46,7 @@ namespace OpenCalaisExample.Controllers
             {
                 tm = null;
             }
+            //return Content(tm.XmlFile, "text/xml");
             return View(tm);
         }
     }
