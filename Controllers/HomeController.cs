@@ -6,12 +6,13 @@ using System.Web.Mvc;
 using OpenCalaisExample.Calais;
 using OpenCalaisExample.Models;
 using System.IO;
+using OpenCalaisExample.CustomHelpers;
 
 namespace OpenCalaisExample.Controllers
 {
     public class HomeController : Controller
     {
-        private string apiKey = "w39fuahdc3s8xrmb63pvxtdg";
+        static string apiKey = "w39fuahdc3s8xrmb63pvxtdg";
         static string paramsRDF =
 @"<c:params xmlns:c=""http://s.opencalais.com/1/pred/"" xmlns:rdf=""http://www.w3.org/1999/02/22-rdf-syntax-ns#"">
 <c:processingDirectives c:allowDistribution=""true"" c:allowSearch=""true"" c:contentType=""text/txt"" c:outputFormat=""xml/rdf"">
@@ -26,6 +27,24 @@ namespace OpenCalaisExample.Controllers
 
         [HttpPost]
         public ActionResult Index(string inputData, HttpPostedFileBase file)
+        {
+            TransformationModel tm = GetTransformationModel(inputData, file);
+            //return Content(tm.XmlFile, "text/xml");
+            return View(tm);
+        }
+
+        [HttpPost]
+        public ActionResult IndexAjax(string inputData, HttpPostedFileBase file)
+        {
+            TransformationModel tm = GetTransformationModel(inputData, file);
+            if (tm != null)
+            {
+                return Content(HtmlHelperXmlTransformation.TransformXml(null, tm.XmlFile, tm.XsltPath).ToHtmlString(), "text/html");
+            }
+            return null;
+        }
+
+        private TransformationModel GetTransformationModel(string inputData, HttpPostedFileBase file)
         {
             TransformationModel tm = new TransformationModel();
             tm.XsltPath = Server.MapPath("~/Content/index.xslt");
@@ -46,8 +65,7 @@ namespace OpenCalaisExample.Controllers
             {
                 tm = null;
             }
-            //return Content(tm.XmlFile, "text/xml");
-            return View(tm);
+            return tm;
         }
     }
 }

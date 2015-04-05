@@ -77,3 +77,7 @@ textarea {
   color: #0D5A90;
   font-weight: bold;
 }
+
+.mark {
+  border-bottom: double #8000FF;
+}

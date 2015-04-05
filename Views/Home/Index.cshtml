@@ -13,12 +13,38 @@
 }
 else
 {
-    using (Html.BeginForm("Index", "Home", FormMethod.Post,  new { enctype = "multipart/form-data" }))
-    {
-        <h1>Enter your data</h1>
-        @Html.TextArea("inputData", new { @cols= 80, @rows = 20 });
-        <br />
-        <input type="file" value="Upload file" name="file"/>
-        <input type="submit" value="Submit" />
-    }
+    <input type="button" id="backButton" onclick="BackFunction()" value="Back" style="display:none" />
+    <div id="ajaxForm" style="display:block">
+        @using (Ajax.BeginForm("Index", "Home", new AjaxOptions { Url = Url.Action("IndexAjax"), OnSuccess = "OnSuccessFunc", HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))
+        {
+            <h1>Enter your data</h1>
+            @Html.TextArea("inputData", new { @cols = 80, @rows = 20 });
+            <br />
+            <input type="file" value="Upload file" name="file" />
+            <input type="submit" value="Submit" />
+        }
+    </div>
+    <div id="resultForAjax" style="display:none">
+
+    </div>
 }
+
+<script type="text/javascript">
+    function OnSuccessFunc(data) {
+        var f = document.getElementById('ajaxForm');
+        var r = document.getElementById('resultForAjax');
+        var b = document.getElementById('backButton');
+        f.style.display = 'none';
+        b.style.display = 'block';
+        r.innerHTML = data;
+        r.style.display = 'block';
+    }
+    function BackFunction() {
+        var f = document.getElementById('ajaxForm');
+        var r = document.getElementById('resultForAjax');
+        var b = document.getElementById('backButton');
+        f.style.display = 'block';
+        b.style.display = 'none';
+        r.style.display = 'none';
+    }
+</script>
