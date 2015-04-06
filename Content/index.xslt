@@ -23,6 +23,27 @@
     </xsl:choose>
   </xsl:template>
 
+  <xsl:template name="substring-after-last">
+    <xsl:param name="string1" select="''" />
+    <xsl:param name="string2" select="''" />
+
+    <xsl:if test="$string1 != '' and $string2 != ''">
+      <xsl:variable name="tail" select="substring-after($string1, $string2)" />
+      <xsl:choose>
+        <xsl:when test="contains($tail, $string2)">
+          <xsl:call-template name="substring-after-last">
+            <xsl:with-param name="string1" select="$tail" />
+            <xsl:with-param name="string2" select="$string2" />
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$tail"/>
+        </xsl:otherwise>
+
+      </xsl:choose>
+    </xsl:if>
+  </xsl:template>
+
   <xsl:template match="/">
     <!--<xsl:variable name="outputString" select="rdf:RDF/rdf:Description/c:document" />-->
     <div class="EntitiesBar">
@@ -30,18 +51,11 @@
       <br />
       <xsl:for-each select="rdf:RDF/rdf:Description">
         <xsl:if test="((rdf:type/@rdf:resource!='') and (c:name!=''))">
-
-          <!--<xsl:analyze-string select="rdf:type/@rdf:resource" regex="([A-Z])\w+">
-            <xsl:matching-substring>
-              <span class="EntityCategory">
-                <xsl:value-of select="regex-group(1)" />
-                <br />
-              </span>
-            </xsl:matching-substring>
-          </xsl:analyze-string>-->
-          
           <span class="EntityCategory">
-            <xsl:value-of select="rdf:type/@rdf:resource" />
+              <xsl:call-template name="substring-after-last">
+                <xsl:with-param name="string1" select="rdf:type/@rdf:resource"/>
+                <xsl:with-param name="string2" select="'/'"/>
+              </xsl:call-template>
             <br />
           </span>
           <xsl:value-of select="c:name"/>
