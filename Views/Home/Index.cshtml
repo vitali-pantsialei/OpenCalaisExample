@@ -7,7 +7,7 @@
 
 @if (Model != null)
 {
-    <div>
+    <div id="resultForAjax">
         @Html.TransformXml(Model.XmlFile, Model.XsltPath)
     </div>
 }
@@ -28,6 +28,9 @@ else
 
     </div>
 }
+<br />
+<br />
+<footer><center>Made by Vitali Pantsialei</center></footer>
 
 <script type="text/javascript">
     function OnSuccessFunc(data) {

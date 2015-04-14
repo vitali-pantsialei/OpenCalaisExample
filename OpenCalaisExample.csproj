@@ -142,6 +142,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\callout.gif" />
     <Content Include="Content\index.xslt">
       <SubType>Designer</SubType>
     </Content>
