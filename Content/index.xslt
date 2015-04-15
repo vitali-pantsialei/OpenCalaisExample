@@ -19,6 +19,12 @@
           <xsl:when test="contains($popup_text, 'Continent')">
             <xsl:value-of select="'&lt;span class=&quot;mark&quot; style=&quot;border-bottom: double #FF0000;&quot;&gt;'"/>
           </xsl:when>
+          <xsl:when test="contains($popup_text, 'Organization')">
+            <xsl:value-of select="'&lt;span class=&quot;mark&quot; style=&quot;border-bottom: double #FE00D6;&quot;&gt;'"/>
+          </xsl:when>
+          <xsl:when test="contains($popup_text, 'Province Or State')">
+            <xsl:value-of select="'&lt;span class=&quot;mark&quot; style=&quot;border-bottom: double #00FE64;&quot;&gt;'"/>
+          </xsl:when>
           <xsl:otherwise>
             <xsl:value-of select="'&lt;span class=&quot;mark&quot;&gt;'"/>
           </xsl:otherwise>
