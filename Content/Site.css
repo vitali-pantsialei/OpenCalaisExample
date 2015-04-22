@@ -77,6 +77,7 @@ textarea {
     display: block;
     color: #0D5A90;
     font-weight: bold;
+    border-bottom: double #E9EA87;
 }
 
 .mark {
@@ -126,7 +127,7 @@ textarea {
 
 #results {
     display: block;
-    margin: 10px 10px 10px 230px;
+    margin: 10px 10px 10px 250px;
     padding: 5px;
     font-size: .85em;
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;

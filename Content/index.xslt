@@ -19,10 +19,10 @@
           <xsl:when test="contains($popup_text, 'Continent')">
             <xsl:value-of select="'&lt;span class=&quot;mark&quot; style=&quot;border-bottom: double #FF0000;&quot;&gt;'"/>
           </xsl:when>
-          <xsl:when test="contains($popup_text, 'Organization')">
+          <xsl:when test="contains($popup_text, 'Organization') or contains($popup_text, 'Company')">
             <xsl:value-of select="'&lt;span class=&quot;mark&quot; style=&quot;border-bottom: double #FE00D6;&quot;&gt;'"/>
           </xsl:when>
-          <xsl:when test="contains($popup_text, 'Province Or State')">
+          <xsl:when test="contains($popup_text, 'Province Or State') or contains($popup_text, 'City')">
             <xsl:value-of select="'&lt;span class=&quot;mark&quot; style=&quot;border-bottom: double #00FE64;&quot;&gt;'"/>
           </xsl:when>
           <xsl:otherwise>
@@ -133,13 +133,44 @@
       <br />
       <xsl:for-each select="rdf:RDF/rdf:Description">
         <xsl:if test="((rdf:type/@rdf:resource!='') and (c:name!=''))">
-          <span class="EntityCategory">
+          <xsl:variable name="res_substring">
             <xsl:call-template name="substring-after-last">
               <xsl:with-param name="string1" select="rdf:type/@rdf:resource"/>
               <xsl:with-param name="string2" select="'/'"/>
             </xsl:call-template>
-            <br />
-          </span>
+          </xsl:variable>
+          <xsl:choose>
+            <xsl:when test="contains($res_substring, 'Person')">
+              <span class="EntityCategory" style="border-bottom: double #8000FF;">
+                <xsl:value-of select="$res_substring"/>
+              </span>
+            </xsl:when>
+            <xsl:when test="contains($res_substring, 'Country')">
+              <span class="EntityCategory" style="border-bottom: double #AEFE00;">
+                <xsl:value-of select="$res_substring"/>
+              </span>
+            </xsl:when>
+            <xsl:when test="contains($res_substring, 'Continent')">
+              <span class="EntityCategory" style="border-bottom: double #FF0000;">
+                <xsl:value-of select="$res_substring"/>
+              </span>
+            </xsl:when>
+            <xsl:when test="contains($res_substring, 'Organization') or contains($res_substring, 'Company')">
+              <span class="EntityCategory" style="border-bottom: double #FE00D6;">
+                <xsl:value-of select="$res_substring"/>
+              </span>
+            </xsl:when>
+            <xsl:when test="contains($res_substring, 'Province Or State') or contains($res_substring, 'City')">
+              <span class="EntityCategory" style="border-bottom: double #00FE64;">
+                <xsl:value-of select="$res_substring"/>
+              </span>
+            </xsl:when>
+            <xsl:otherwise>
+              <span class="EntityCategory">
+                <xsl:value-of select="$res_substring"/>
+              </span>
+            </xsl:otherwise>
+          </xsl:choose>
           <xsl:value-of select="c:name"/>
           <br/>
         </xsl:if>
